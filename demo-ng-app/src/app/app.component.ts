@@ -1,19 +1,22 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { HomeComponent } from './home/home.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @Component({
   selector: 'app-root', //this is the tag name that will be used in index.html
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, HomeComponent, HeaderComponent],
   template: `
-    <h1>This is the component attached to app-root of {{ html }}!</h1>
-
-    <router-outlet />
+    <app-header />
+    <main>
+      <app-home />
+    </main>
   `,
   // this is the css that will be applied to the component only (not globally)
   styles: [
     `
-      h1 {
-        color: blue;
+      main {
+        padding: 16px;
       }
     `,
   ],
