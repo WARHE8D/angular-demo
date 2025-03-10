@@ -1,0 +1,22 @@
+--dry-run extension cmd to test not actually add
+
+app component(already created)
+    >header component
+    >home component
+
+
+ng generate component
+ng g c components/header, creates header component inside components folder
+
+
+angular.json
+"projects": {
+    "demo-ng-app": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "inlineTemplate": true,//remove to add seperate files
+          "inlineStyle": true,//remove to add seperate files
+          "style": "scss"
+        }
+      },
